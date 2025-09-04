@@ -56,6 +56,7 @@ npm install
 
 # Run in your IDE
 npm start
+```
 
 ## Usage
 
