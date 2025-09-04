@@ -16,14 +16,14 @@ SampleSort is a desktop app (Electron) that organizes audio sample libraries int
 ## App Preview
 
 <video
-  src="https://github.com/jesseswanton/SampleSort/blob/main/src/images/SampleSort%20Preview.mp4"
+  src="SampleSort/blob/main/src/images/SampleSort%20Preview.mp4"
   width="900"
   autoplay
   controls
   muted
   loop
   playsinline
-  poster="https://github.com/jesseswanton/SampleSort/blob/main/src/images/SampleSort%20Screenshot.png">
+  poster="SampleSort/blob/main/src/images/SampleSort%20Screenshot.png">
   Your browser doesn’t support the video tag.
 </video>
 
