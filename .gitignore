@@ -1,0 +1,47 @@
+# Node / package managers
+node_modules/
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build & packaging artifacts
+dist/
+out/
+build/
+release/
+*.asar
+
+# Caches / temp
+.cache/
+.tmp/
+temp/
+tmp/
+coverage/
+
+# OS cruft
+.DS_Store
+Thumbs.db
+
+# IDEs / editors
+.vscode/
+.idea/
+
+# Logs
+logs/
+*.log
+*.trace
+*.pid
+*.seed
+
+# Patch leftovers
+*.orig
+*.rej
+
+# Local env files
+.env
+.env.local
+
+# App-generated temp folders
+*_temp_*/
+_temp_*/
+_Duplicates/

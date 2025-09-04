@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SampleSort</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="preload">
+  <div class="main-container">
+
+    <!-- Left panel -->
+    <div class="left-panel section fade-container">
+      <div class="config-header fade-child" style="--i:1">
+        <h2>Configuration</h2>
+
+        <div class="save-container">
+          <button type="button" id="saveConfigBtn">💾 Save Configuration File</button>
+          <div id="saveMessage"></div>
+        </div>
+      </div>
+
+      <form id="configForm">
+        <div class="fade-child" style="--i:2">
+          <label>
+            <span class="bold-label">Sample Directory</span>
+            <input type="text" id="samplesDir" />
+            <button type="button" id="browseSamplesBtn">Browse…</button>
+          </label>
+        </div>
+
+        <br>
+
+        <div class="fade-child" style="--i:3">
+          <label>
+            <span class="bold-label">Destination Directory</span>
+            <input type="text" id="destDir" placeholder="New directory recommended, but can be the same as Sample Directory if you want to move files within it"/>
+            <button type="button" id="browseDestBtn">Browse...</button>
+          </label>
+        </div>
+
+        <br>
+
+        <div id="folderCategories" class="fade-child" style="--i:4">
+          <h3>Folder Categories</h3>
+          <details class="instructions" style="--i:4">
+            <summary>Instructions</summary>
+            <div class="instructions-body">
+              <ol>
+                <li><strong>Add Folders</strong> to group related sample categories.</li>
+                <li><strong>Expand/collapse</strong> a folder by clicking the 📁 icon. Click inside a folder to <strong>select</strong> it.</li>
+                <li>Enter a <strong>Category Name</strong> and its <strong>Keywords</strong>. Then click
+                  <strong>Add Category</strong> to add it to the <strong>selected folder</strong>. Tip: The order
+                  of categories and keywords matters for matching (Put more specific categories like "open hihats" before "hats" to find open hihats first).</li>
+                <li><strong>Drag & drop</strong> folders or categories to reorder them or move them between folders.</li>
+                <li>If <strong>MATCH ALL</strong> is selected, the file name must contain all keywords in the list rather than just one.</li>
+                <li>Use <strong>Find & Sort</strong> to review your categories/keywords and to sort them alphabetically.</li>
+                <li>Manage specific <strong>File Extensions</strong> to sort below.
+                <li>In <strong>Run settings</strong>, optionally create additional subfolders based on sample length,
+                    BPM, and more.</li>
+              </ol>
+            </div>
+          </details>              
+        
+          <details id="filtersWrap" class="filters" style="--i:5">
+            <summary>Find & Sort</summary>
+            <div id="categoryFilters" class="filters-row">
+              <input id="catFilter" type="text" placeholder="Filter categories…" aria-label="Filter categories">
+              <button id="catSortBtn" type="button" data-dir="asc">Sort by Categories A → Z</button>
+              <input id="kwFilter" type="text" placeholder="Filter keywords…" aria-label="Filter keywords">
+              <button id="kwSortBtn" type="button" data-dir="asc">Sort by Keywords A → Z</button>
+            </div>
+          </details>
+
+          <!-- Add Category & Keywords -->
+          <div class="categories-editor" style="--i:6">
+            <div class="inline-inputs">
+              <div class="input-group">
+                <label for="newCategoryInput">Add Category Name</label>
+                <input type="text" id="newCategoryInput" placeholder="Category name for keywords to match" />
+              </div>
+
+              <div class="input-group" style="--i:7">
+                <label for="newKeywordsInput">Keywords</label>
+                <input type="text" id="newKeywordsInput" placeholder="Separate multiple keywords by commas" />
+              </div>
+
+              <button type="button" id="addCategoryBtn">Add Category</button>
+            </div>
+
+            <div class="categories-tree" style="--i:8">
+              <div class="tree-toolbar">
+                <button id="addMainCategoryBtn" type="button">Add Folder</button>
+                <button id="closeFoldersBtn" type="button">Close All Folders</button>
+              </div>
+            </div>
+            <div id="mainCategoriesRoot"></div>
+          </div>
+        </div>
+
+        <div class="categories-editor fade-child" style="--i:9">
+          <h3>File Extensions</h3>
+          <p>System files (.DS_Store, __MACOSX, etc.) are always skipped. </p>
+          <div class="inline-inputs">
+            <input type="text" id="newExtensionInput" placeholder="Add extensions to include in sort" />
+            <button type="button" id="addExtensionBtn">Add Extension</button>
+          </div>
+          <br>
+          <ul id="extensionsList"></ul>
+        </div>
+
+        <div class="categories-editor fade-child" style="--i:10">
+          <h3>Supported Archive Extensions</h3>
+          <ul id="archiveExtensionsList"></ul>
+        </div>
+      </form>
+    </div>
+
+    <!-- Right panel -->
+    <div class="right-panel section fade-container">
+
+      <div class="fade-child" style="display:flex;justify-content:space-between;align-items:center; --i:0">
+        <h2>Run Settings</h2>
+      </div>
+
+      <label class="checkbox-label fade-child" style="display:block; position:relative; --i:1">
+        <input type="checkbox" id="moveFiles" />
+        Move files to destination directory (Keep unchecked to Copy files instead)
+        <div id="moveWarning">⚠️ Moving files could break file references for existing projects ⚠️</div>
+      </label>
+
+      <br>
+
+      <label class="checkbox-label fade-child" style="--i:2">
+        <input type="checkbox" id="keepArchives" />
+        Keep Archives (Uncheck to delete .zip and .rar files after extraction)
+      </label>
+
+      <br>
+
+      <label class="checkbox-label fade-child" style="--i:3">
+        <input type="checkbox" id="checkParentFolder" />
+        Use parent folder name for keyword matching if no match is found for the file name
+      </label>
+
+      <br>
+
+      <div class="checkbox-label fade-child" style="--i:4">
+        <label><input type="checkbox" id="sortMidiToFolder"> Sort .midi and .mid files into a MIDI folder</label>
+      </div>
+
+      <br>
+
+      <div class="dedupe-options fade-child" style="--i:5">
+        <label class="checkbox-label">
+          <input type="checkbox" id="dedupeEnabled" />
+          Check for duplicate files by file hash
+        </label>
+      
+        <div id="dedupeControls" style="margin: 6px 0 0 24px; display:none;">
+          <label style="margin-top:6px; display:inline-block;">
+            <input type="checkbox" id="dedupePreferDest" checked />
+            Prefer keeping files that already exist in Destination Directory over new files in Sample Directory
+          </label>
+          <br>
+          <label>
+            Mode:
+            <select id="dedupeMode">
+              <option value="skip">Skip duplicates</option>
+              <option value="quarantine">Move or copy duplicates to "_Duplicates" folder</option>
+            </select>
+          </label>
+          <br>
+          <label>
+            Algorithm:
+            <select id="dedupeAlgo">
+              <option value="sha256">SHA-256 (recommended)</option>
+              <option value="sha1">SHA-1 (faster)</option>
+            </select>
+          </label>  
+        </div>      
+      </div>
+
+      <br>
+
+      <div class="categories-editor fade-child" style="--i:6">
+        <label class="checkbox-label">
+          <input type="checkbox" id="checkLength" />
+          Create additional subfolder for category when a sample is longer than
+          <input type="number" id="lengthThreshold" value="" min="1" />
+          seconds
+        </label>
+
+        <br>
+
+        <label class="checkbox-label">
+          <input type="checkbox" id="keepPackSubfolder" />
+          Keep sample packs together. Sample pack folder names will be based on the highest level folders in the
+          Sample Directory and will include the subfolder name in parenthesis if it exists.
+        </label>
+
+        <div id="packDepthWrap" style="margin:6px 0 0 26px; display:none;">
+          <label></label>
+        </div>
+
+        <br>
+
+        <!-- <div class="categories-editor fade-child"> -->
+        <div class="fade-child">
+          <label class="fade-child inline-setting" style="--i:7">
+            <input type="checkbox" id="sortByBPM">
+            Analyze and create subfolders by BPM for samples longer than 
+            <input type="number" id="BPMThreshold" min="1" step="0.1" style="width:70px;">
+            seconds
+          </label>
+
+          <div id="bpmOptions" class="fade-child fast-fade" style="display:none; margin: 0 0 0 24px; --i:8">
+            <label style="margin-top:6px; display:inline-block;">
+              <input type="checkbox" id="bpmDebug">
+              Include BPM analysis per file in log
+            </label>
+          </div>
+
+        <br>
+
+          <label class="fade-child fast-fade inline-setting" style="--i:9">
+            <input type="checkbox" id="sortByKey">
+            Create subfolders by Key from file name
+          </label>
+
+          <div id="keyOptions" class="fade-child fast-fade" style="display:none; margin: 0 0 0 24px; --i:10">
+            <label style="margin-top:12px; display:inline-block;">
+              <input id="keyFromParent" type="checkbox" checked>
+              Also check parent folder name for Key
+            </label>
+            <br><br>
+            <input id="keyNoteOnlyFallback" type="checkbox" checked>
+            If no Key is found, create a folder for the note instead (e.g. A#).
+          </div>
+
+        <div id="pathPreview" class="hint fade-child" style="--i:13">
+          <br>
+          <strong>Example output:&nbsp;</strong>
+          <code id="examplePath"></code>
+        </div>
+      </div>
+
+      <br>
+      <div class="fade-child">
+      <label class="fade-child inline-setting" style="--i:14">
+        <input type="checkbox" id="enablePostProcess">
+        <span>Run only BPM and/or Key sort on an organized Destination Directory</span>
+      </label>
+      <div id="postProcessWrap" class="fade-child fast-fade" style="display:none; margin: 6px 0 0 24px; --i:15">
+        <p class="hint fade-child"> Use if your existing library only needs a BPM/Key sort</p>
+        <div class="postproc-actions">
+          <button id="postProcessBtn" type="button">Run BPM/Key sort</button>
+        </div>
+      </div>
+      </div>
+
+      <br>
+
+      <label class="checkbox-label fade-child" style="--i:16">
+        <input type="checkbox" id="dryRun" />
+        PREVIEW RUN without making changes
+      </label>
+
+      <br>
+
+      <button type="button" id="startButton" data-text="Start" class="fade-child" style="--i:13">
+          <video class="btn-video" autoplay muted loop playsinline preload="auto" poster="../src/images/SampleSortBckImg9.png">
+            <source src="../src/images/SampleSortBackground.mp4" type="video/mp4" />
+          </video>
+          <span class="btn-overlay"></span>
+          <span class="btn-label">Start</span>
+        </button>
+
+      <h2 class="fade-child" style="--i:17">Log</h2>
+
+      <div class="log-toolbar fade-child" style="--i:15">
+        <button id="exportLogBtn" type="button">Export Log</button>
+        <button id="clearLogBtn" type="button">Clear Log</button>
+        <button id="stopButton" type="button">Stop Sort</button>
+      </div>
+
+      <div class="fade-child" style="position: relative; --i:16">
+        <div id="logArea" role="log" aria-live="polite" aria-atomic="false"></div>
+        <button id="jumpToBottom">↓ Bottom</button>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="renderer.js"></script>
+</body>
+</html>

@@ -1,0 +1,975 @@
+{
+  "samplesDir": "",
+  "destDir": "",
+  "moveFiles": false,
+  "keepArchives": true,
+  "dryRun": false,
+  "extensions": [
+    ".wav",
+    ".mp3",
+    ".flac",
+    ".aiff",
+    ".midi",
+    ".mid"
+  ],
+  "archiveExtensions": [
+    ".zip",
+    ".rar"
+  ],
+  "checkParentFolder": true,
+  "checkLength": false,
+  "lengthThreshold": 20,
+  "sortByBPM": true,
+  "BPMThreshold": 4,
+  "bpmDebug": true,
+  "mainCategories": [
+    {
+      "name": "Drum Loops and Builds",
+      "categories": [
+        {
+          "name": "Drum Loops",
+          "keywords": [
+            "drum",
+            "loop"
+          ],
+          "matchAll": true
+        },
+        {
+          "name": "Drum Builds",
+          "keywords": [
+            "drum",
+            "build"
+          ],
+          "matchAll": true
+        },
+        {
+          "name": "Top Loops",
+          "keywords": [
+            "top",
+            "loop"
+          ],
+          "matchAll": true
+        },
+        {
+          "name": "Bottom Loops",
+          "keywords": [
+            "bottom",
+            "loop"
+          ],
+          "matchAll": true
+        },
+        {
+          "name": "Drum Fills",
+          "keywords": [
+            "fill",
+            "roll",
+            "flam"
+          ],
+          "matchAll": false
+        }
+      ]
+    },
+    {
+      "name": "Melodic Loops",
+      "categories": [
+        {
+          "name": "Guitar Loops",
+          "keywords": [
+            "guitar",
+            "loop"
+          ],
+          "matchAll": true
+        },
+        {
+          "name": "Piano Loops",
+          "keywords": [
+            "piano",
+            "loop"
+          ],
+          "matchAll": true
+        },
+        {
+          "name": "Synth Loops",
+          "keywords": [
+            "synth",
+            "loop"
+          ],
+          "matchAll": true
+        },
+        {
+          "name": "Bass Loops",
+          "keywords": [
+            "bass",
+            "loop"
+          ],
+          "matchAll": true
+        },
+        {
+          "name": "Chord Loop",
+          "keywords": [
+            "chord",
+            "loop"
+          ],
+          "matchAll": true
+        },
+        {
+          "name": "Drop Loop",
+          "keywords": [
+            "drop",
+            "loop"
+          ],
+          "matchAll": true
+        },
+        {
+          "name": "Lead Loop",
+          "keywords": [
+            "lead",
+            "loop"
+          ],
+          "matchAll": true
+        },
+        {
+          "name": "Saw Loop",
+          "keywords": [
+            "saw",
+            "loop"
+          ],
+          "matchAll": true
+        },
+        {
+          "name": "Brass Loops",
+          "keywords": [
+            "brass",
+            "loop"
+          ],
+          "matchAll": true
+        },
+        {
+          "name": "Melody Loops",
+          "keywords": [
+            "melod",
+            "loop"
+          ],
+          "matchAll": true
+        },
+        {
+          "name": "Miscellaneous Loops",
+          "keywords": [
+            "loop"
+          ],
+          "matchAll": false
+        }
+      ]
+    },
+    {
+      "name": "Hihats",
+      "categories": [
+        {
+          "name": "Open Hats",
+          "keywords": [
+            "open hihat",
+            "open hat",
+            "open hh",
+            "o hh",
+            "hhopen",
+            "ohh",
+            "openhh"
+          ],
+          "matchAll": false
+        },
+        {
+          "name": "Closed Hats",
+          "keywords": [
+            "closedhh",
+            "hihat",
+            "hat",
+            "hh"
+          ],
+          "matchAll": false
+        }
+      ]
+    },
+    {
+      "name": "Vocals",
+      "categories": [
+        {
+          "name": "Acapellas",
+          "keywords": [
+            "acapella"
+          ],
+          "matchAll": false
+        },
+        {
+          "name": "Vocal Reverse",
+          "keywords": [
+            "vocal",
+            "rev"
+          ],
+          "matchAll": true
+        },
+        {
+          "name": "Chants",
+          "keywords": [
+            "hey",
+            "chant",
+            "yeah",
+            "fiya",
+            "ayo",
+            "ooo"
+          ],
+          "matchAll": false
+        },
+        {
+          "name": "Choir",
+          "keywords": [
+            "choir",
+            "choral"
+          ],
+          "matchAll": false
+        },
+        {
+          "name": "Vocals",
+          "keywords": [
+            "vocal",
+            "vox",
+            "voice",
+            "chop",
+            "predrop",
+            "spoken"
+          ],
+          "matchAll": false
+        },
+        {
+          "name": "Vocoder",
+          "keywords": [
+            "vocoder"
+          ],
+          "matchAll": false
+        }
+      ]
+    },
+    {
+      "name": "Drums",
+      "categories": [
+        {
+          "name": "Claps",
+          "keywords": [
+            "clap"
+          ],
+          "matchAll": false
+        },
+        {
+          "name": "Kicks",
+          "keywords": [
+            "kick",
+            "bdrum",
+            "kik",
+            "kck",
+            "bd",
+            "kickdrum",
+            "bassdrum"
+          ],
+          "matchAll": false
+        },
+        {
+          "name": "Rides and Crashes",
+          "keywords": [
+            "ride",
+            "crash",
+            "cymbal"
+          ],
+          "matchAll": false
+        },
+        {
+          "name": "Rimshots",
+          "keywords": [
+            "rim"
+          ],
+          "matchAll": false
+        },
+        {
+          "name": "Snares",
+          "keywords": [
+            "snare",
+            "snr"
+          ],
+          "matchAll": false
+        },
+        {
+          "name": "Sub Bass",
+          "keywords": [
+            "sub",
+            "808"
+          ],
+          "matchAll": false
+        },
+        {
+          "name": "Toms",
+          "keywords": [
+            "tom"
+          ],
+          "matchAll": false
+        }
+      ]
+    },
+    {
+      "name": "Percussion",
+      "categories": [
+        {
+          "name": "Snap",
+          "keywords": [
+            "snap"
+          ],
+          "matchAll": false
+        },
+        {
+          "name": "Percussion",
+          "keywords": [
+            "perc"
+          ],
+          "matchAll": false
+        },
+        {
+          "name": "Shaker",
+          "keywords": [
+            "shaker"
+          ],
+          "matchAll": false
+        },
+        {
+          "name": "Wood",
+          "keywords": [
+            "wood",
+            "stick"
+          ],
+          "matchAll": false
+        },
+        {
+          "name": "Cowbell",
+          "keywords": [
+            "cowbell"
+          ],
+          "matchAll": false
+        },
+        {
+          "name": "Tamb and Clave",
+          "keywords": [
+            "tamb",
+            "clave",
+            "guiro"
+          ],
+          "matchAll": false
+        },
+        {
+          "name": "Hand Drums",
+          "keywords": [
+            "bongo",
+            "djembe",
+            "concas",
+            "conga",
+            "hand drum"
+          ],
+          "matchAll": false
+        },
+        {
+          "name": "Bells and Chimes",
+          "keywords": [
+            "bell",
+            "chime",
+            "triangle"
+          ],
+          "matchAll": false
+        },
+        {
+          "name": "Foley",
+          "keywords": [
+            "foley"
+          ],
+          "matchAll": false
+        }
+      ]
+    },
+    {
+      "name": "Sound Effects",
+      "categories": [
+        {
+          "name": "Scratch",
+          "keywords": [
+            "scratch"
+          ],
+          "matchAll": false
+        },
+        {
+          "name": "Glitches and Zaps",
+          "keywords": [
+            "zap",
+            "glitch",
+            "pop"
+          ],
+          "matchAll": false
+        },
+        {
+          "name": "Reverse",
+          "keywords": [
+            "reverse",
+            "rev",
+            "rvrs",
+            "backwards"
+          ],
+          "matchAll": false
+        },
+        {
+          "name": "Siren",
+          "keywords": [
+            "siren"
+          ],
+          "matchAll": false
+        },
+        {
+          "name": "Gun Shots",
+          "keywords": [
+            "gun",
+            "reload"
+          ],
+          "matchAll": false
+        },
+        {
+          "name": "Glass",
+          "keywords": [
+            "glass"
+          ],
+          "matchAll": false
+        },
+        {
+          "name": "Industrial",
+          "keywords": [
+            "industrial"
+          ],
+          "matchAll": false
+        },
+        {
+          "name": "FX",
+          "keywords": [
+            "fx",
+            "effect",
+            "shift"
+          ],
+          "matchAll": false
+        }
+      ]
+    },
+    {
+      "name": "Background Effects",
+      "categories": [
+        {
+          "name": "Sub Drops",
+          "keywords": [
+            "sub",
+            "drop"
+          ],
+          "matchAll": true
+        },
+        {
+          "name": "Downlifters",
+          "keywords": [
+            "down",
+            "fall"
+          ],
+          "matchAll": false
+        },
+        {
+          "name": "Impacts",
+          "keywords": [
+            "impact",
+            "boom"
+          ],
+          "matchAll": false
+        },
+        {
+          "name": "Risers",
+          "keywords": [
+            "rise",
+            "up",
+            "build"
+          ],
+          "matchAll": false
+        },
+        {
+          "name": "Other Sweeps and Noise",
+          "keywords": [
+            "noise",
+            "sweep"
+          ],
+          "matchAll": false
+        }
+      ]
+    },
+    {
+      "name": "Ambience",
+      "categories": [
+        {
+          "name": "Ambience",
+          "keywords": [
+            "ambience",
+            "atmosphere",
+            "texture",
+            "ambient",
+            "drone",
+            "field"
+          ],
+          "matchAll": false
+        },
+        {
+          "name": "Environment",
+          "keywords": [
+            "thunder",
+            "rain",
+            "environment",
+            "water",
+            "waves"
+          ],
+          "matchAll": false
+        },
+        {
+          "name": "Animals",
+          "keywords": [
+            "bird",
+            "bark"
+          ],
+          "matchAll": false
+        },
+        {
+          "name": "Pad",
+          "keywords": [
+            "pad"
+          ],
+          "matchAll": false
+        },
+        {
+          "name": "People",
+          "keywords": [
+            "crowd",
+            "applause",
+            "footstep"
+          ],
+          "matchAll": false
+        },
+        {
+          "name": "Crackle",
+          "keywords": [
+            "crackle"
+          ],
+          "matchAll": false
+        }
+      ]
+    },
+    {
+      "name": "Instruments and Sounds",
+      "categories": [
+        {
+          "name": "Guitar",
+          "keywords": [
+            "guitar"
+          ],
+          "matchAll": false
+        },
+        {
+          "name": "Piano and Keys",
+          "keywords": [
+            "piano",
+            "keys",
+            "keyboard"
+          ],
+          "matchAll": false
+        },
+        {
+          "name": "One Shots",
+          "keywords": [
+            "one shot",
+            "oneshot"
+          ],
+          "matchAll": false
+        },
+        {
+          "name": "Synths",
+          "keywords": [
+            "synth",
+            "chord",
+            "saw",
+            "analog"
+          ],
+          "matchAll": false
+        },
+        {
+          "name": "Bass",
+          "keywords": [
+            "bass"
+          ],
+          "matchAll": false
+        },
+        {
+          "name": "Arpeggiator",
+          "keywords": [
+            "arp",
+            "seq"
+          ],
+          "matchAll": false
+        },
+        {
+          "name": "Plucks",
+          "keywords": [
+            "pluck"
+          ],
+          "matchAll": false
+        },
+        {
+          "name": "Strings",
+          "keywords": [
+            "string"
+          ],
+          "matchAll": false
+        },
+        {
+          "name": "Brass",
+          "keywords": [
+            "brass",
+            "trumpet",
+            "sax",
+            "horn"
+          ],
+          "matchAll": false
+        },
+        {
+          "name": "Growls",
+          "keywords": [
+            "growl"
+          ],
+          "matchAll": false
+        },
+        {
+          "name": "Lead",
+          "keywords": [
+            "lead"
+          ],
+          "matchAll": false
+        }
+      ]
+    }
+  ],
+  "categories": {
+    "Drum Loops": [
+      "drum",
+      "loop"
+    ],
+    "Drum Builds": [
+      "drum",
+      "build"
+    ],
+    "Top Loops": [
+      "top",
+      "loop"
+    ],
+    "Bottom Loops": [
+      "bottom",
+      "loop"
+    ],
+    "Drum Fills": [
+      "fill",
+      "roll",
+      "flam"
+    ],
+    "Guitar Loops": [
+      "guitar",
+      "loop"
+    ],
+    "Piano Loops": [
+      "piano",
+      "loop"
+    ],
+    "Synth Loops": [
+      "synth",
+      "loop"
+    ],
+    "Bass Loops": [
+      "bass",
+      "loop"
+    ],
+    "Chord Loop": [
+      "chord",
+      "loop"
+    ],
+    "Drop Loop": [
+      "drop",
+      "loop"
+    ],
+    "Lead Loop": [
+      "lead",
+      "loop"
+    ],
+    "Saw Loop": [
+      "saw",
+      "loop"
+    ],
+    "Brass Loops": [
+      "brass",
+      "loop"
+    ],
+    "Melody Loops": [
+      "melod",
+      "loop"
+    ],
+    "Miscellaneous Loops": [
+      "loop"
+    ],
+    "Open Hats": [
+      "open hihat",
+      "open hat",
+      "open hh",
+      "o hh",
+      "hhopen",
+      "ohh",
+      "openhh"
+    ],
+    "Closed Hats": [
+      "closedhh",
+      "hihat",
+      "hat",
+      "hh"
+    ],
+    "Acapellas": [
+      "acapella"
+    ],
+    "Vocal Reverse": [
+      "vocal",
+      "rev"
+    ],
+    "Chants": [
+      "hey",
+      "chant",
+      "yeah",
+      "fiya",
+      "ayo",
+      "ooo"
+    ],
+    "Choir": [
+      "choir",
+      "choral"
+    ],
+    "Vocals": [
+      "vocal",
+      "vox",
+      "voice",
+      "chop",
+      "predrop",
+      "spoken"
+    ],
+    "Vocoder": [
+      "vocoder"
+    ],
+    "Claps": [
+      "clap"
+    ],
+    "Kicks": [
+      "kick",
+      "bdrum",
+      "kik",
+      "kck",
+      "bd",
+      "kickdrum",
+      "bassdrum"
+    ],
+    "Rides and Crashes": [
+      "ride",
+      "crash",
+      "cymbal"
+    ],
+    "Rimshots": [
+      "rim"
+    ],
+    "Snares": [
+      "snare",
+      "snr"
+    ],
+    "Sub Bass": [
+      "sub",
+      "808"
+    ],
+    "Toms": [
+      "tom"
+    ],
+    "Snap": [
+      "snap"
+    ],
+    "Percussion": [
+      "perc"
+    ],
+    "Shaker": [
+      "shaker"
+    ],
+    "Wood": [
+      "wood",
+      "stick"
+    ],
+    "Cowbell": [
+      "cowbell"
+    ],
+    "Tamb and Clave": [
+      "tamb",
+      "clave",
+      "guiro"
+    ],
+    "Hand Drums": [
+      "bongo",
+      "djembe",
+      "concas",
+      "conga",
+      "hand drum"
+    ],
+    "Bells and Chimes": [
+      "bell",
+      "chime",
+      "triangle"
+    ],
+    "Foley": [
+      "foley"
+    ],
+    "Scratch": [
+      "scratch"
+    ],
+    "Glitches and Zaps": [
+      "zap",
+      "glitch",
+      "pop"
+    ],
+    "Reverse": [
+      "reverse",
+      "rev",
+      "rvrs",
+      "backwards"
+    ],
+    "Siren": [
+      "siren"
+    ],
+    "Gun Shots": [
+      "gun",
+      "reload"
+    ],
+    "Glass": [
+      "glass"
+    ],
+    "Industrial": [
+      "industrial"
+    ],
+    "FX": [
+      "fx",
+      "effect",
+      "shift"
+    ],
+    "Sub Drops": [
+      "sub",
+      "drop"
+    ],
+    "Downlifters": [
+      "down",
+      "fall"
+    ],
+    "Impacts": [
+      "impact",
+      "boom"
+    ],
+    "Risers": [
+      "rise",
+      "up",
+      "build"
+    ],
+    "Other Sweeps and Noise": [
+      "noise",
+      "sweep"
+    ],
+    "Ambience": [
+      "ambience",
+      "atmosphere",
+      "texture",
+      "ambient",
+      "drone",
+      "field"
+    ],
+    "Environment": [
+      "thunder",
+      "rain",
+      "environment",
+      "water",
+      "waves"
+    ],
+    "Animals": [
+      "bird",
+      "bark"
+    ],
+    "Pad": [
+      "pad"
+    ],
+    "People": [
+      "crowd",
+      "applause",
+      "footstep"
+    ],
+    "Crackle": [
+      "crackle"
+    ],
+    "Guitar": [
+      "guitar"
+    ],
+    "Piano and Keys": [
+      "piano",
+      "keys",
+      "keyboard"
+    ],
+    "One Shots": [
+      "one shot",
+      "oneshot"
+    ],
+    "Synths": [
+      "synth",
+      "chord",
+      "saw",
+      "analog"
+    ],
+    "Bass": [
+      "bass"
+    ],
+    "Arpeggiator": [
+      "arp",
+      "seq"
+    ],
+    "Plucks": [
+      "pluck"
+    ],
+    "Strings": [
+      "string"
+    ],
+    "Brass": [
+      "brass",
+      "trumpet",
+      "sax",
+      "horn"
+    ],
+    "Growls": [
+      "growl"
+    ],
+    "Lead": [
+      "lead"
+    ]
+  },
+  "dedupeEnabled": true,
+  "dedupeMode": "skip",
+  "dedupePreferDest": true,
+  "dedupeAlgo": "sha256",
+  "keepPackSubfolder": true,
+  "packDepth": 1,
+  "sortByKey": true,
+  "keyFromParent": true,
+  "keyNoteOnlyFallback": false,
+  "sortMidiToFolder": true,
+  "midiFolderName": "MIDI",
+  "enablePostProcess": false
+}

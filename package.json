@@ -1,0 +1,22 @@
+{
+  "name": "samplesort",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bpm-detective": "^2.0.5",
+    "music-metadata": "^11.8.2",
+    "node-unrar-js": "^2.0.2",
+    "unzipper": "^0.12.3"
+  },
+  "devDependencies": {
+    "electron": "^37.3.0"
+  }
+}
