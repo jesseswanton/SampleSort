@@ -13,17 +13,17 @@ SampleSort is a desktop app (Electron) that organizes audio sample libraries int
 
 > MIDI files (`.mid`, `.midi`) are included for sorting & dedupe but **skipped** for BPM analysis.
 
-## Screenshots
+## App Preview
 
 <video
-  src="src/images/SampleSort Preview.mp4"
+  src="[src/images/SampleSort Preview.mp4](https://github.com/jesseswanton/SampleSort/blob/main/src/images/SampleSort%20Preview.mp4)"
   width="900"
   autoplay
   controls
   muted
   loop
   playsinline
-  poster="src/images/SampleSort Screenshot.png">
+  poster="[src/images/SampleSort Screenshot.png](https://github.com/jesseswanton/SampleSort/blob/main/src/images/SampleSort%20Screenshot.png)">
   Your browser doesn’t support the video tag.
 </video>
 
