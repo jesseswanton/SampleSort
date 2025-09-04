@@ -18,7 +18,7 @@ SampleSort is a desktop app (Electron) that organizes audio sample libraries int
 <img src="https://github.com/jesseswanton/SampleSort/blob/main/src/images/SampleSort%20Screenshot.png" width="800" alt="Categories & folders">
 
 <video
-  src="https://github.com/jesseswanton/SampleSort/blob/main/src/images/SampleSort%20Preview.mp4"
+  src="https://github.com/user-attachments/assets/326f3956-d710-4e8c-88e4-d3a7a257367a"
   width="900"
   autoplay
   controls
@@ -28,6 +28,12 @@ SampleSort is a desktop app (Electron) that organizes audio sample libraries int
   poster="https://github.com/jesseswanton/SampleSort/blob/main/src/images/SampleSort%20Screenshot.png">
   Your browser doesn’t support the video tag.
 </video>
+
+
+
+
+
+
 
 ---
 
