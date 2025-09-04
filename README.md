@@ -15,7 +15,10 @@ SampleSort is a desktop app (Electron) that organizes audio sample libraries int
 
 ## App Preview
 
-<img src="https://github.com/jesseswanton/SampleSort/blob/main/src/images/SampleSort%20Screenshot.png" width="800" alt="Categories & folders">
+<img src="https://github.com/jesseswanton/SampleSort/blob/main/src/images/SampleSort%20Screenshot.png" width="800" alt="PreviewTop">
+<img src="https://github.com/jesseswanton/SampleSort/blob/main/src/images/SampleSort%20Screenshot2.png" width="800" alt="PreviewBottom">
+
+### Video Preview
 
 <video
   src="https://github.com/user-attachments/assets/326f3956-d710-4e8c-88e4-d3a7a257367a"
